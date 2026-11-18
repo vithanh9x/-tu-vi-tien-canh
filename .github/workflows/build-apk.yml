@@ -35,6 +35,11 @@ jobs:
           cp MainActivity.java app/src/main/java/com/lacviet/tuvi/MainActivity.java
           cp index.html app/src/main/assets/index.html
           cp build.gradle app/build.gradle
+          cat > build.gradle <<'EOF'
+          plugins {
+              id 'com.android.application' version '8.6.1' apply false
+          }
+          EOF
 
       - name: Generate Gradle wrapper
         run: gradle wrapper --gradle-version 8.7
